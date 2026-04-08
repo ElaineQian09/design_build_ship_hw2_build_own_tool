@@ -36,8 +36,8 @@ export default function RootLayout({
           <main className="flex-1 w-full max-w-6xl mx-auto px-6 py-10">
             {children}
           </main>
-          <footer className="border-t border-slate-200 bg-white">
-            <div className="max-w-6xl mx-auto px-6 py-4 text-center text-sm text-slate-400">
+          <footer className="mt-auto border-t border-slate-200 bg-white">
+            <div className="max-w-6xl mx-auto px-6 py-5 text-center text-xs text-slate-400">
               Interview Prep Hub — Built for DBS Assignment 2
             </div>
           </footer>

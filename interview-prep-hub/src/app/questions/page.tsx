@@ -138,7 +138,7 @@ export default function QuestionsPage() {
 
       {/* ---- Questions List ---- */}
       {filtered.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-12 text-center">
+        <div className="rounded-xl border border-dashed border-slate-200 bg-white p-12 text-center shadow-sm">
           <p className="text-sm text-slate-400">
             No questions match your search.
           </p>
@@ -180,8 +180,8 @@ export default function QuestionsPage() {
                 {/* Right side: badges */}
                 <div className="flex items-center gap-2 shrink-0 pt-0.5">
                   {q.status !== "not-started" && (
-                    <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      q.status === "mastered" ? "text-emerald-600 bg-emerald-50" : "text-amber-600 bg-amber-50"
+                    <span className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ${
+                      q.status === "mastered" ? "text-emerald-700 bg-emerald-50" : "text-amber-700 bg-amber-50"
                     }`}>
                       {q.status === "mastered" ? "Mastered" : "Practicing"}
                     </span>

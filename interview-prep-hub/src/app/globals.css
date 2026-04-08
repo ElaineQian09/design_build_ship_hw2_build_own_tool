@@ -21,3 +21,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+::selection {
+  background-color: var(--accent-light);
+  color: var(--foreground);
+}
+
+/* Smooth focus transitions globally */
+*:focus-visible {
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}

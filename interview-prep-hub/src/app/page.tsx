@@ -35,7 +35,7 @@ export default function Home() {
     .slice(0, 5);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/* ---- Hero ---- */}
       <section>
         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
@@ -80,7 +80,7 @@ export default function Home() {
         {/* Recent Questions — spans 2 cols */}
         <div className="lg:col-span-2 rounded-xl border border-slate-200 bg-white shadow-sm">
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
-            <h2 className="text-base font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-slate-900">
               Recent Questions
             </h2>
             <Link
@@ -103,12 +103,12 @@ export default function Home() {
                   {q.title}
                 </span>
                 <span
-                  className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${categoryStyle[q.category]}`}
+                  className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ${categoryStyle[q.category]}`}
                 >
                   {q.category}
                 </span>
                 <span
-                  className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${difficultyStyle[q.difficulty]}`}
+                  className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ${difficultyStyle[q.difficulty]}`}
                 >
                   {q.difficulty}
                 </span>
@@ -120,7 +120,7 @@ export default function Home() {
         {/* Company Prep */}
         <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
-            <h2 className="text-base font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-slate-900">
               Company Prep
             </h2>
             <Link

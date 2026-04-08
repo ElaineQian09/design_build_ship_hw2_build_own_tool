@@ -73,7 +73,7 @@ export default function QuestionDetailPage() {
         </p>
         <Link
           href="/questions"
-          className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 transition-colors"
+          className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-colors"
         >
           <svg
             className="h-4 w-4"
@@ -121,17 +121,17 @@ export default function QuestionDetailPage() {
       <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-6 mb-6">
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span
-            className={`text-xs font-medium px-2.5 py-0.5 rounded-full ring-1 ring-inset ${categoryStyle[question.category]}`}
+            className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ring-1 ring-inset ${categoryStyle[question.category]}`}
           >
             {categoryLabel[question.category]}
           </span>
           <span
-            className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${difficultyStyle[question.difficulty]}`}
+            className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ${difficultyStyle[question.difficulty]}`}
           >
             {question.difficulty}
           </span>
           <span
-            className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${statusStyle[question.status]}`}
+            className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full ${statusStyle[question.status]}`}
           >
             {statusLabel[question.status]}
           </span>
@@ -218,8 +218,8 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white shadow-sm mb-5">
-      <div className="flex items-center gap-2 px-5 py-3.5 border-b border-slate-100">
+    <div className="rounded-xl border border-slate-200 bg-white shadow-sm mb-6">
+      <div className="flex items-center gap-2 px-5 py-4 border-b border-slate-100">
         {icon}
         <h2 className="text-sm font-semibold text-slate-800">{title}</h2>
       </div>

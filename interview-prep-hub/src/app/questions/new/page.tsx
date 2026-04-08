@@ -189,7 +189,7 @@ export default function NewQuestionPage() {
           <button
             type="button"
             onClick={() => router.back()}
-            className="rounded-lg px-5 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors"
+            className="rounded-lg px-5 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 transition-colors"
           >
             Cancel
           </button>

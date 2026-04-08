@@ -130,11 +130,11 @@ export default function CompaniesPage() {
 
                 {/* Notes */}
                 {c.notes ? (
-                  <p className="text-[13px] text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed">
                     {c.notes}
                   </p>
                 ) : (
-                  <p className="text-[13px] text-slate-300 italic">
+                  <p className="text-sm text-slate-300 italic">
                     No notes yet.
                   </p>
                 )}
@@ -166,7 +166,7 @@ function SummaryPill({
   accent: string;
 }) {
   return (
-    <div className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
+    <div className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
       <span className={`h-2 w-2 rounded-full ${accent}`} />
       <span className="text-xs font-medium text-slate-500">{label}</span>
       <span className="text-sm font-bold text-slate-800">{value}</span>
