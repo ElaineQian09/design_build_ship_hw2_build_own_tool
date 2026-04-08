@@ -157,9 +157,9 @@ export default function QuestionsPage() {
                   <div className="flex items-center gap-2.5 mb-1.5">
                     <span
                       className={`shrink-0 h-2 w-2 rounded-full ${
-                        q.mastered ? "bg-emerald-400" : "bg-slate-300"
+                        q.status === "mastered" ? "bg-emerald-400" : q.status === "practicing" ? "bg-amber-400" : "bg-slate-300"
                       }`}
-                      title={q.mastered ? "Mastered" : "Not mastered"}
+                      title={q.status}
                     />
                     <h3 className="text-sm font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors truncate">
                       {q.title}
@@ -179,9 +179,11 @@ export default function QuestionsPage() {
 
                 {/* Right side: badges */}
                 <div className="flex items-center gap-2 shrink-0 pt-0.5">
-                  {q.mastered && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-                      Mastered
+                  {q.status !== "not-started" && (
+                    <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                      q.status === "mastered" ? "text-emerald-600 bg-emerald-50" : "text-amber-600 bg-amber-50"
+                    }`}>
+                      {q.status === "mastered" ? "Mastered" : "Practicing"}
                     </span>
                   )}
                   <span

@@ -24,7 +24,7 @@ export default function Home() {
 
   /* derived stats */
   const totalQuestions = questions.length;
-  const masteredQuestions = questions.filter((q) => q.mastered).length;
+  const masteredQuestions = questions.filter((q) => q.status === "mastered").length;
   const totalCompanies = companies.length;
   const checklistDone = checklistItems.filter((c) => c.completed).length;
   const checklistTotal = checklistItems.length;
@@ -96,7 +96,7 @@ export default function Home() {
               <li key={q.id} className="px-5 py-3 flex items-center gap-3">
                 <span
                   className={`shrink-0 h-2 w-2 rounded-full ${
-                    q.mastered ? "bg-emerald-400" : "bg-slate-300"
+                    q.status === "mastered" ? "bg-emerald-400" : q.status === "practicing" ? "bg-amber-400" : "bg-slate-300"
                   }`}
                 />
                 <span className="flex-1 text-sm text-slate-700 truncate">
@@ -169,7 +169,7 @@ export default function Home() {
       {/* ---- Quick Actions ---- */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <QuickAction
-          href="/add-question"
+          href="/questions/new"
           title="Add a Question"
           description="Log a new question from a real interview."
           iconBg="bg-indigo-100 text-indigo-600"

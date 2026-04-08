@@ -1,10 +1,14 @@
+export type QuestionStatus = "not-started" | "practicing" | "mastered";
+
 export interface Question {
   id: string;
   title: string;
   company: string;
   category: "behavioral" | "technical" | "system-design" | "resume";
   difficulty: "easy" | "medium" | "hard";
-  mastered: boolean;
+  status: QuestionStatus;
+  notes: string;
+  outline: string;
   dateAdded: string;
 }
 
@@ -15,7 +19,9 @@ export const questions: Question[] = [
     company: "Amazon",
     category: "behavioral",
     difficulty: "medium",
-    mastered: true,
+    status: "mastered",
+    notes: "Use the STAR method. Focus on leadership and prioritization.",
+    outline: "1. Set the scene (team size, deadline)\n2. Explain your role\n3. Describe actions taken\n4. Share measurable results",
     dateAdded: "2026-04-01",
   },
   {
@@ -24,7 +30,9 @@ export const questions: Question[] = [
     company: "Google",
     category: "system-design",
     difficulty: "hard",
-    mastered: false,
+    status: "not-started",
+    notes: "",
+    outline: "",
     dateAdded: "2026-04-02",
   },
   {
@@ -33,7 +41,9 @@ export const questions: Question[] = [
     company: "Meta",
     category: "technical",
     difficulty: "medium",
-    mastered: true,
+    status: "mastered",
+    notes: "Classic pointer manipulation. Know iterative and recursive approaches.",
+    outline: "1. Iterative: prev/curr/next pointers\n2. Recursive: reverse rest, fix head\n3. Mention O(1) space for iterative",
     dateAdded: "2026-04-02",
   },
   {
@@ -42,7 +52,9 @@ export const questions: Question[] = [
     company: "Apple",
     category: "behavioral",
     difficulty: "easy",
-    mastered: false,
+    status: "practicing",
+    notes: "Emphasize empathy and communication skills.",
+    outline: "",
     dateAdded: "2026-04-03",
   },
   {
@@ -51,7 +63,9 @@ export const questions: Question[] = [
     company: "Amazon",
     category: "technical",
     difficulty: "hard",
-    mastered: false,
+    status: "not-started",
+    notes: "",
+    outline: "",
     dateAdded: "2026-04-03",
   },
   {
@@ -60,7 +74,9 @@ export const questions: Question[] = [
     company: "Meta",
     category: "system-design",
     difficulty: "hard",
-    mastered: false,
+    status: "practicing",
+    notes: "Think about WebSockets, message queues, and delivery guarantees.",
+    outline: "",
     dateAdded: "2026-04-04",
   },
   {
@@ -69,7 +85,9 @@ export const questions: Question[] = [
     company: "Google",
     category: "behavioral",
     difficulty: "easy",
-    mastered: true,
+    status: "mastered",
+    notes: "Pick a genuine strength with a concrete example.",
+    outline: "1. Name the strength\n2. Give a specific story\n3. Connect to team impact",
     dateAdded: "2026-04-05",
   },
   {
@@ -78,7 +96,9 @@ export const questions: Question[] = [
     company: "Microsoft",
     category: "technical",
     difficulty: "medium",
-    mastered: false,
+    status: "practicing",
+    notes: "Sliding window pattern. Use a Set or Map for seen characters.",
+    outline: "",
     dateAdded: "2026-04-05",
   },
   {
@@ -87,7 +107,9 @@ export const questions: Question[] = [
     company: "Apple",
     category: "system-design",
     difficulty: "hard",
-    mastered: false,
+    status: "not-started",
+    notes: "",
+    outline: "",
     dateAdded: "2026-04-06",
   },
   {
@@ -96,7 +118,9 @@ export const questions: Question[] = [
     company: "Microsoft",
     category: "behavioral",
     difficulty: "medium",
-    mastered: true,
+    status: "mastered",
+    notes: "Be honest. Show self-awareness and growth mindset.",
+    outline: "1. Describe the situation honestly\n2. Own the mistake\n3. Explain what you learned\n4. Show how you applied the lesson",
     dateAdded: "2026-04-06",
   },
   {
@@ -105,7 +129,9 @@ export const questions: Question[] = [
     company: "Google",
     category: "resume",
     difficulty: "medium",
-    mastered: false,
+    status: "practicing",
+    notes: "Prepare a 2-minute narrative arc. Don't just list jobs.",
+    outline: "",
     dateAdded: "2026-04-06",
   },
   {
@@ -114,7 +140,9 @@ export const questions: Question[] = [
     company: "Amazon",
     category: "resume",
     difficulty: "easy",
-    mastered: true,
+    status: "mastered",
+    notes: "Be straightforward. Frame productively.",
+    outline: "1. Acknowledge the gap\n2. Explain what you did (learning, personal, etc.)\n3. Connect back to professional growth",
     dateAdded: "2026-04-07",
   },
   {
@@ -123,7 +151,9 @@ export const questions: Question[] = [
     company: "Apple",
     category: "resume",
     difficulty: "easy",
-    mastered: false,
+    status: "not-started",
+    notes: "",
+    outline: "",
     dateAdded: "2026-04-07",
   },
 ];
