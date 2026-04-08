@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { questions, type Question } from "@/data/questions";
+import { useApp } from "@/context/AppContext";
+import type { Question } from "@/data/questions";
 
 /* ---------- style maps ---------- */
 
@@ -37,6 +38,7 @@ const categories: Question["category"][] = [
 /* ================================================== */
 
 export default function QuestionsPage() {
+  const { questions } = useApp();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<
     Question["category"] | "all"

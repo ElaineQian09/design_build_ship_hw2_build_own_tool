@@ -1,19 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { questions } from "@/data/questions";
-import { companies } from "@/data/companies";
-import { checklistItems } from "@/data/checklist";
-
-/* ---------- derived stats ---------- */
-const totalQuestions = questions.length;
-const masteredQuestions = questions.filter((q) => q.mastered).length;
-const totalCompanies = companies.length;
-const checklistDone = checklistItems.filter((c) => c.completed).length;
-const checklistTotal = checklistItems.length;
-const checklistPct = Math.round((checklistDone / checklistTotal) * 100);
-
-const recentQuestions = [...questions]
-  .sort((a, b) => b.dateAdded.localeCompare(a.dateAdded))
-  .slice(0, 5);
+import { useApp } from "@/context/AppContext";
 
 /* ---------- helpers ---------- */
 const difficultyStyle: Record<string, string> = {
@@ -32,6 +20,20 @@ const categoryStyle: Record<string, string> = {
 /* ================================================== */
 
 export default function Home() {
+  const { questions, companies, checklistItems } = useApp();
+
+  /* derived stats */
+  const totalQuestions = questions.length;
+  const masteredQuestions = questions.filter((q) => q.mastered).length;
+  const totalCompanies = companies.length;
+  const checklistDone = checklistItems.filter((c) => c.completed).length;
+  const checklistTotal = checklistItems.length;
+  const checklistPct = Math.round((checklistDone / checklistTotal) * 100);
+
+  const recentQuestions = [...questions]
+    .sort((a, b) => b.dateAdded.localeCompare(a.dateAdded))
+    .slice(0, 5);
+
   return (
     <div className="space-y-10">
       {/* ---- Hero ---- */}
